@@ -19,17 +19,26 @@ app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+db.sequelize.sync()
+  .then(() => {
+    console.log("Synced db.");
+  })
+  .catch((err) => {
+    console.log("Failed to sync db: " + err.message);
+  });
+
+
 // simple route
 app.get("/", (req, res) => {
   res.json({ message: "Welcome to bezkoder application." });
 });
 
 
-require('./routes/auth.routes')(app);
-require('./routes/user.routes')(app);
+require('./src/routes/auth.routes')(app);
+require('./src/routes/user.routes')(app);
 
 // set port, listen for requests
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 04200;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
 });
@@ -39,14 +48,8 @@ function initial() {
      id: 1,
      name: "user"
    });
-  
-   Role.create({
+     Role.create({
      id: 2,
-     name: "moderator"
-   });
-  
-   Role.create({
-     id: 3,
      name: "admin"
    });
  }
