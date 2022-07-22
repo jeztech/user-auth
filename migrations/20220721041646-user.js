@@ -33,6 +33,7 @@ module.exports = {
       updatedAt: {
         allowNull: true,
         type: Sequelize.DATE,
+        defaultValue: new Date()
       },
       deletedAt: {
         allowNull: true,
