@@ -7,19 +7,22 @@ module.exports = {
         queryInterface.bulkInsert('users',[
           {
             id: 1,
-            fullName: "jep",
+            fullName: 'jep',
             email: "jep@gmail.com",
             phone: "09457639201",
+            password: "$2a$08$NDLw0iM5y7MQVIQpACz7oubxBQFCUXEQ1nDtvWDdqyFtaQRMXZ.LK",
         },{
           id: 2,
-          fullName: "jp",
+          fullName: 'jp',
           email: "jp@yahoo.com",
           phone: "09457639201",
+          password: "$2a$08$NDLw0iM5y7MQVIQpACz7oubxBQFCUXEQ1nDtvWDdqyFtaQRMXZ.LK",
       }, {
         id: 3,
-        fullName: "jb",
+        fullName: 'jb',
         email: "jb@proton.com",
         phone: "09457639201",
+        password: "$2a$08$NDLw0iM5y7MQVIQpACz7oubxBQFCUXEQ1nDtvWDdqyFtaQRMXZ.LK",
       }
       ])
       ])
